@@ -1,3 +1,4 @@
+/*
 let firstValue = parseInt(prompt("Type the first number"));
 console.log(firstValue);
 let operator = prompt("Type the operator");
@@ -42,3 +43,37 @@ function result (){
 }
 
 result()
+*/
+
+const random = Math.floor(Math.random() * 50) + 1;
+console.log(random);
+let guess = parseInt(prompt("type your guess!"));
+console.log(guess);
+let fails = 0;
+let isCorrect = false;
+
+do{
+  // debugger
+
+  if(guess === random){
+    console.log("Congratulations");
+    console.log("Total number of fails is " + fails);
+    isCorrect = true;
+    break;
+  }
+  else if (guess < random){
+    console.log("Too low, try again");
+    fails+=1;
+    guess = parseInt(prompt("type your guess!"));
+  }
+  else if (guess > random){
+    console.log("Too high, try again");
+    fails+=1;
+    guess = parseInt(prompt("type your guess!"));
+  }
+
+  else{
+    console.log("ERROR");
+    break;
+  }
+}while(random !== guess || isCorrect == false);
